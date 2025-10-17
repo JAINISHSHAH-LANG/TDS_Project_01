@@ -17,7 +17,7 @@ async function testRound1() {
       "Background is blue",
       "Button triggers alert on click"
     ],
-    evaluation_url: "https://webhook.site/your-unique-url", // Replace with your test webhook
+    evaluation_url: "https://webhook.site/8bbc90ad-a189-4781-a1b5-9a3380c1eda5", // Replace with your test webhook
     attachments: []
   };
 
@@ -61,7 +61,7 @@ async function testRound2() {
       "Count increments on button click",
       "Counter starts at 0"
     ],
-    evaluation_url: "https://webhook.site/your-unique-url",
+    evaluation_url: "https://webhook.site/8bbc90ad-a189-4781-a1b5-9a3380c1eda5",
     attachments: []
   };
 
