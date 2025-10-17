@@ -1,0 +1,37 @@
+{
+  "name": "llm-code-deployment",
+  "version": "1.0.0",
+  "description": "Automated LLM-powered system for app generation, GitHub deployment, and evaluation callbacks.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "node test-request.js",
+    "test:round2": "node test-request.js round2"
+  },
+  "keywords": [
+    "llm",
+    "openai",
+    "github",
+    "automation",
+    "deployment",
+    "vercel",
+    "virtual-ta",
+    "code-generation"
+  ],
+  "author": "Jainish Prathmesh Shah",
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/rest": "^20.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "openai": "^4.20.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
