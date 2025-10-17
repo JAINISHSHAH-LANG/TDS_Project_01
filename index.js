@@ -1,27 +1,48 @@
 // index.js
-import express from "express";
-import cors from "cors";
-
+const express = require("express");
 const app = express();
-app.use(cors());
-app.use(express.json());
+const PORT = 3000;
 
-// --- Health check endpoint ---
+// Health endpoint
 app.get("/health", (req, res) => {
-  res.status(200).send("OK");
+  res.status(200).send("Server is healthy!");
 });
 
-// --- Example route for deployment ---
-app.post("/api/deploy", (req, res) => {
-  console.log("Received deployment request:", req.body);
-  res.status(200).json({ message: "Deployment started successfully!" });
+// Start server
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
 });
 
-// --- Start the server ---
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, "0.0.0.0", () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
-});
+
+
+
+
+
+
+// // index.js
+// import express from "express";
+// import cors from "cors";
+
+// const app = express();
+// app.use(cors());
+// app.use(express.json());
+
+// // --- Health check endpoint ---
+// app.get("/health", (req, res) => {
+//   res.status(200).send("OK");
+// });
+
+// // --- Example route for deployment ---
+// app.post("/api/deploy", (req, res) => {
+//   console.log("Received deployment request:", req.body);
+//   res.status(200).json({ message: "Deployment started successfully!" });
+// });
+
+// // --- Start the server ---
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, "0.0.0.0", () => {
+//   console.log(`✅ Server running on http://localhost:${PORT}`);
+// });
 
 
 
