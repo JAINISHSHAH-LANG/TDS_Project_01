@@ -1,3 +1,31 @@
+// index.js
+import express from "express";
+import cors from "cors";
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+// --- Health check endpoint ---
+app.get("/health", (req, res) => {
+  res.status(200).send("OK");
+});
+
+// --- Example route for deployment ---
+app.post("/api/deploy", (req, res) => {
+  console.log("Received deployment request:", req.body);
+  res.status(200).json({ message: "Deployment started successfully!" });
+});
+
+// --- Start the server ---
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`✅ Server running on http://localhost:${PORT}`);
+});
+
+
+
+
 // require('dotenv').config();
 // const express = require('express');
 // const cors = require('cors');
@@ -530,38 +558,38 @@
 // });
 
 
-import express from "express";
+// import express from "express";
 
-const app = express();
-app.use(express.json());
+// const app = express();
+// app.use(express.json());
 
-// Health check endpoint
-app.get("/health", (req, res) => {
-  console.log("Health check requested");
-  res.status(200).send("OK");
-});
+// // Health check endpoint
+// app.get("/health", (req, res) => {
+//   console.log("Health check requested");
+//   res.status(200).send("OK");
+// });
 
-// Test endpoint to simulate processing requests
-app.post("/generate", (req, res) => {
-  console.log("Received app generation request:", req.body);
-  // Simulate async processing
-  setTimeout(() => {
-    console.log("Processing complete for request:", req.body.appName || "Unnamed App");
-  }, 2000);
-  res.status(200).json({ message: "Request received successfully", status: "processing" });
-});
+// // Test endpoint to simulate processing requests
+// app.post("/generate", (req, res) => {
+//   console.log("Received app generation request:", req.body);
+//   // Simulate async processing
+//   setTimeout(() => {
+//     console.log("Processing complete for request:", req.body.appName || "Unnamed App");
+//   }, 2000);
+//   res.status(200).json({ message: "Request received successfully", status: "processing" });
+// });
 
-// Default root endpoint
-app.get("/", (req, res) => {
-  res.send("🚀 LLM Code Deployment Server is running successfully!");
-});
+// // Default root endpoint
+// app.get("/", (req, res) => {
+//   res.send("🚀 LLM Code Deployment Server is running successfully!");
+// });
 
-// Start server
-const PORT = process.env.PORT || 3000;
+// // Start server
+// const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
-});
+// app.listen(PORT, '0.0.0.0', () => {
+//   console.log(`✅ Server running on http://localhost:${PORT}`);
+// });
 
 
 
